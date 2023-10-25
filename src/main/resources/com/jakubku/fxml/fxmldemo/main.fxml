@@ -2,17 +2,20 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.collections.FXCollections?>
+<?import com.jakubku.fxml.fxmldemo.Person?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
-   <center>
-      <Button fx:id="message_btn" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
-   </center>
-   <top>
-      <Label fx:id="message_lbl" text="Message" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-   </top>
-</BorderPane>
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jakubku.fxml.fxmldemo.Controller">
+   <Label fx:id="selected" />
+   <Button fx:id="showSelected" text="Show Selected" onMouseClicked="#showSelected" />
+   <Button fx:id="selectNext" text="Select Next" onMouseClicked="#selectNext"/>
+   <ListView fx:id="listView">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <Person Name="Smith" Age="30" />
+            <Person Name="Peter" Age="25" />
+            <Person Name="Sara" Age="40" />
+         </FXCollections>
+      </items>
+   </ListView>
+</VBox>

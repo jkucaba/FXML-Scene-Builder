@@ -1,23 +1,28 @@
 package com.jakubku.fxml.fxmldemo;
 
 
-import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class Controller {
+    @FXML
+    public Label selected;
+    @FXML
+    public Button showSelected;
+    @FXML
+    public Button selectNext;
+    @FXML
+    public ListView<Person> listView;
 
-
-public class Controller implements Initializable {
-    public Label message_lbl;
-    public Button message_btn;
-    private final String message;
-    public Controller(String message){
-        this.message = message;
+    public void initialize(){
+        selected.setText("No selections");
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        message_btn.setOnAction(event -> message_lbl.setText("Message: " + message));
+    public void showSelected(){
+        selected.setText(listView.getSelectionModel().getSelectedItem().toString());
+    }
+    public void selectNext(){
+        listView.getSelectionModel().selectNext();
     }
 }
