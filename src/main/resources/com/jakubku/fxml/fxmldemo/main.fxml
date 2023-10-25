@@ -4,12 +4,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jakubku.fxml.fxmldemo.Controller">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
    <center>
-      <Button mnemonicParsing="false" onAction="#onIncrement" text="Increment" BorderPane.alignment="CENTER" />
+      <Button fx:id="message_btn" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
    </center>
    <top>
-      <Label fx:id="count_lbl" text="Label" BorderPane.alignment="CENTER">
+      <Label fx:id="message_lbl" text="Message" BorderPane.alignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
